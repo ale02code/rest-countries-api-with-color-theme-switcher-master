@@ -159,7 +159,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 0 1rem;
 }
 
 .country-cards__card__title {
