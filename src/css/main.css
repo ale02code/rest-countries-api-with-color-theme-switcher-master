@@ -116,12 +116,12 @@ body {
 }
 
 .header__more__filter__list-active {
-  display: flex; 
+  display: flex;
 }
 
 .header__more__filter__list__item {
   list-style: none;
-  width: max-content;
+  width: 100%;
   padding: 0 1rem;
   margin: .5rem 0;
 }
