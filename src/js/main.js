@@ -13,6 +13,8 @@ const changePosition = (region) => {
   } else {
     res = data.filter(item => item.region === region);
   }
+
+  searchInput.value = "";
 }
 
 fetch("data.json")
