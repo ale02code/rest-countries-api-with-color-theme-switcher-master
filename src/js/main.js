@@ -2,6 +2,8 @@
 
 const itemsRegion = document.querySelectorAll(".header__more__filter__list__item");
 
+const searchInput = document.querySelector(".header__more__search__input");
+
 let res;
 let data;
 
@@ -27,6 +29,15 @@ fetch("data.json")
         updateDOM();
       });
     });
+
+    searchInput.addEventListener("input", () => {
+      const value = searchInput.value;
+      res = data.filter(item => {
+        return item.name.toLowerCase().includes(value.toLowerCase());
+      })
+
+      updateDOM();
+    })
 
     const updateDOM = () => {
       const container = document.querySelector(".country-cards");
