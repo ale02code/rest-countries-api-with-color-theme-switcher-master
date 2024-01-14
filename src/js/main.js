@@ -99,6 +99,12 @@ fetch("data.json")
       const borderCountries = document.createElement("div");
       borderCountries.classList.add("specification-section__border-countries");
 
+      const borderCountriesContainer = document.createElement("div");
+      borderCountriesContainer.classList.add("specification-section__border-countries__content");
+
+      const borderCountriesTitle = document.createElement("strong");
+      borderCountriesTitle.classList.add("specification-section__border-countries__title");
+
       const borderCountriesItem1 = document.createElement("button");
       borderCountriesItem1.classList.add("specification-section__border-countries__item");
       const borderCountriesItem2 = document.createElement("button");
@@ -119,6 +125,8 @@ fetch("data.json")
       Currencies.innerHTML = `<strong>Currencies:</strong> ${element.currencies[0].name}`;
       Languages.innerHTML = `<strong>Languages:</strong> ${element.languages.map(lang => lang.name).join(", ")}`;
 
+      borderCountriesTitle.textContent = "Border Countries:"
+
       borderCountriesItem1.textContent = "France";
       borderCountriesItem2.textContent = "Germany";
       borderCountriesItem3.textContent = "Netherlands";
@@ -134,7 +142,8 @@ fetch("data.json")
 
       textSpecificationDate2.append(TopLevelDomain, Currencies, Languages);
 
-      borderCountries.append(borderCountriesItem1, borderCountriesItem2, borderCountriesItem3);
+      borderCountries.append(borderCountriesTitle, borderCountriesContainer);
+      borderCountriesContainer.append(borderCountriesItem1, borderCountriesItem2, borderCountriesItem3);
     }
 
     const updateDOM = () => {

@@ -187,12 +187,12 @@ body {
 
 .specification-section {
   width: 100%;
-  min-height: 105vh;
+  height: max-content;
   padding: 0 2rem;
   display: none;
   flex-direction: column;
   align-items: start;
-  justify-content: space-around;
+  justify-content: space-evenly;
   gap: 1rem;
 }
 
@@ -202,7 +202,7 @@ body {
   display: flex;
   gap: 1rem;
   box-shadow: 0 0 8px rgba(0, 0, 0, .2);
-  margin-bottom: ;
+  margin-bottom: 40px;
 }
 
 .specification-section__back:hover {
@@ -214,7 +214,7 @@ body {
 }
 
 .specification-section__text {
-  height: 300px;
+  height: 320px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -222,21 +222,41 @@ body {
 }
 
 .specification-section__title {
+  display: block;
   font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.specification-section__text p {
+  margin-bottom: 8px;
 }
 
 .specification-section__border-countries {
   width: 100%;
-  height: 35px;
   margin: auto;
+  margin-bottom: 3.2rem;
+}
+
+.specification-section__border-countries__content {
+  width: 100%;
+  height: 35px;
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.specification-section__border-countries__title {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 1.6rem;
 }
 
 .specification-section__border-countries__item {
-  background-color: var(--white);
-  width: 30%;
   border: none;
+  height: 100%;
+  width: 30%;
+  color: #000;
+  background-color: var(--white);
   box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 }
 
