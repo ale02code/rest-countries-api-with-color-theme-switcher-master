@@ -17,19 +17,10 @@ body {
   overflow-x: hidden;
 }
 
-.body-dark {
-  background-color: var(--very-dark-blue);
-}
-
 .header {
   width: 100%;
   height: max-content;
   margin-bottom: 20px;
-}
-
-.header-dark {
-  background-color: var(--very-dark-blue);
-  color: var(--white);
 }
 
 .header__present {
@@ -40,10 +31,6 @@ body {
   padding: 0 1rem;
   box-shadow: 0px 1px 8px rgba(0, 0, 0, .2);
   margin-bottom: 12px;
-}
-
-.header__present-dark {
-  background-color: var(--dark-blue);
 }
 
 .header__present__theme {
@@ -81,10 +68,6 @@ body {
   height: 50px;
   border-radius: var(--small-radius);
   margin: 1rem 0;
-}
-
-.header__more__search-dark {
-  background-color: var(--dark-blue);
 }
 
 .fa-magnifying-glass {
@@ -127,10 +110,6 @@ body {
   cursor: pointer;
 }
 
-.header__more__filter-dark {
-  background-color: var(--dark-blue);
-}
-
 .header__more__filter__list {
   width: 100%;
   height: max-content;
@@ -150,11 +129,6 @@ body {
   display: flex;
 }
 
-.header__more__filter__list-active-dark {
-  background-color: var(--dark-blue);
-  color: var(--white);
-}
-
 .header__more__filter__list__item {
   list-style: none;
   width: 100%;
@@ -169,10 +143,6 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--very-light-gray);
-}
-
-.main-dark {
-  background-color: var(--very-dark-blue);
 }
 
 .country-cards {
@@ -200,11 +170,6 @@ body {
 .country-cards__card:hover {
   cursor: pointer;
   transform: scale(103%);
-}
-
-.country-cards__card-dark {
-  background-color: var(--dark-blue);
-  color: var(--white);
 }
 
 .country-cards__card__img {
@@ -305,6 +270,36 @@ body {
 }
 
 /* Dark Mode Styles */
+.body-dark {
+  background-color: var(--dark-blue);
+}
+
+.header-dark {
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+}
+
+.header__present-dark {
+  background-color: var(--very-dark-blue);
+}
+
+.header__more__search-dark {
+  background-color: var(--dark-blue);
+}
+
+.header__more__filter__list-active-dark {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+.main-dark {
+  background-color: var(--very-dark-blue);
+}
+
+.country-cards__card-dark {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
 
 .specification-section-dark {
   background-color: var(--dark-blue);

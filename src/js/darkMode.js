@@ -17,9 +17,10 @@ const iconMoon = document.querySelector(".fa-moon");
 iconMoon.classList.add("fa-regular");
 
 darkModeButton.addEventListener("click", () => {
-  iconMoon.classList.replace("fa-regular", "fa-solid");
-
   body.classList.toggle("body-dark");
+
+  body.classList.contains("body-dark") ? iconMoon.classList.replace("fa-regular", "fa-solid") : iconMoon.classList.replace("fa-solid", "fa-regular");
+
   header.classList.toggle("header-dark");
   headerPresent.classList.toggle("header__present-dark");
   headerSearch.classList.toggle("header__more__search-dark");
