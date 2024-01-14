@@ -1,5 +1,6 @@
 "use strict";
 
+const bodyDark = document.body;
 const mainContainer = document.querySelector(".main");
 const searchContainer = document.querySelector(".header__more__search");
 const filterContainer = document.querySelector(".header__more__filter");
@@ -9,6 +10,8 @@ const containerCards = document.querySelector(".country-cards");
 const itemsRegion = document.querySelectorAll(".header__more__filter__list__item");
 
 const searchInput = document.querySelector(".header__more__search__input");
+
+const buttonTheme = document.querySelector(".header__present__theme");
 
 let res;
 let data;
@@ -146,6 +149,38 @@ fetch("data.json")
 
       borderCountries.append(borderCountriesTitle, borderCountriesContainer);
       borderCountriesContainer.append(borderCountriesItem1, borderCountriesItem2, borderCountriesItem3);
+
+      if (bodyDark.classList.contains("body-dark")) {
+        specificationSection.classList.toggle("specification-section-dark");
+        containerBack.classList.toggle("specification-section__back-dark");
+
+        borderCountriesItem1.classList.add("specification-section__border-countries__item-dark");
+        borderCountriesItem2.classList.add("specification-section__border-countries__item-dark");
+        borderCountriesItem3.classList.add("specification-section__border-countries__item-dark");
+      } else {
+        specificationSection.classList.remove("specification-section-dark");
+        containerBack.classList.remove("specification-section__back-dark");
+        borderCountriesItem1.classList.remove("specification-section__border-countries__item-dark");
+        borderCountriesItem2.classList.remove("specification-section__border-countries__item-dark");
+        borderCountriesItem3.classList.remove("specification-section__border-countries__item-dark");
+      }
+
+      buttonTheme.addEventListener("click", () => {
+        if (bodyDark.classList.contains("body-dark")) {
+          specificationSection.classList.toggle("specification-section-dark");
+          containerBack.classList.toggle("specification-section__back-dark");
+
+          borderCountriesItem1.classList.add("specification-section__border-countries__item-dark");
+          borderCountriesItem2.classList.add("specification-section__border-countries__item-dark");
+          borderCountriesItem3.classList.add("specification-section__border-countries__item-dark");
+        } else {
+          specificationSection.classList.remove("specification-section-dark");
+          containerBack.classList.remove("specification-section__back-dark");
+          borderCountriesItem1.classList.remove("specification-section__border-countries__item-dark");
+          borderCountriesItem2.classList.remove("specification-section__border-countries__item-dark");
+          borderCountriesItem3.classList.remove("specification-section__border-countries__item-dark");
+        }
+      })
     }
 
     const updateDOM = () => {
@@ -154,6 +189,12 @@ fetch("data.json")
       res.forEach(element => {
         const card = document.createElement("div");
         card.classList.add("country-cards__card");
+
+        if (bodyDark.classList.contains("body-dark")) {
+          card.classList.add("country-cards__card-dark");
+        } else {
+          card.classList.remove("country-cards__card-dark");
+        }
 
         card.addEventListener("click", () => createSpecificationSection(element));
 

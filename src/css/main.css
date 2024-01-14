@@ -150,6 +150,11 @@ body {
   display: flex;
 }
 
+.header__more__filter__list-active-dark {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
 .header__more__filter__list__item {
   list-style: none;
   width: 100%;
@@ -297,6 +302,26 @@ body {
   color: #000;
   background-color: var(--white);
   box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+/* Dark Mode Styles */
+
+.specification-section-dark {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+.header__more__filter__list-active-dark {
+  background-color: var(--dark-blue);
+}
+
+.specification-section__back-dark {
+  background-color: var(--very-dark-blue);
+}
+
+.specification-section__border-countries__item-dark {
+  background-color: var(--very-dark-blue);
+  color: var(--white);
 }
 
 .hidden {

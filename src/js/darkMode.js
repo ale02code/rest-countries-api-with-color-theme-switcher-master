@@ -9,17 +9,16 @@ const headerPresent = document.querySelector(".header__present");
 const headerSearch = document.querySelector(".header__more__search");
 const headerSearchInput = document.querySelector(".header__more__search__input");
 const headerFilter = document.querySelector(".header__more__filter");
+const containerRegionCard = document.querySelector(".header__more__filter__list");
 
 const main = document.querySelector(".main");
 
-const changeThemeCards = () => {
-  console.log(containerCardsToggleTheme);
-  containerCardsToggleTheme.forEach(card => {
-    card.classList.toggle("country-cards__card-dark");
-  });
-}
+const iconMoon = document.querySelector(".fa-moon");
+iconMoon.classList.add("fa-regular");
 
 darkModeButton.addEventListener("click", () => {
+  iconMoon.classList.replace("fa-regular", "fa-solid");
+
   body.classList.toggle("body-dark");
   header.classList.toggle("header-dark");
   headerPresent.classList.toggle("header__present-dark");
@@ -35,5 +34,5 @@ darkModeButton.addEventListener("click", () => {
     card.classList.toggle("country-cards__card-dark");
   });
 
-  // changeThemeCards();
+  containerRegionCard.classList.toggle("header__more__filter__list-active-dark");
 });
