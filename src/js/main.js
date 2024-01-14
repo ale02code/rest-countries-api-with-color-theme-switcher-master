@@ -48,6 +48,8 @@ fetch("data.json")
     });
 
     const createSpecificationSection = (element) => {
+      window.scrollTo(0, 0);
+
       searchContainer.classList.add("hidden");
       filterContainer.classList.add("hidden");
       containerCards.classList.add("hidden");

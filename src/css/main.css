@@ -17,10 +17,19 @@ body {
   overflow-x: hidden;
 }
 
+.body-dark {
+  background-color: var(--very-dark-blue);
+}
+
 .header {
   width: 100%;
   height: max-content;
   margin-bottom: 20px;
+}
+
+.header-dark {
+  background-color: var(--very-dark-blue);
+  color: var(--white);
 }
 
 .header__present {
@@ -31,6 +40,10 @@ body {
   padding: 0 1rem;
   box-shadow: 0px 1px 8px rgba(0, 0, 0, .2);
   margin-bottom: 12px;
+}
+
+.header__present-dark {
+  background-color: var(--dark-blue);
 }
 
 .header__present__theme {
@@ -70,6 +83,10 @@ body {
   margin: 1rem 0;
 }
 
+.header__more__search-dark {
+  background-color: var(--dark-blue);
+}
+
 .fa-magnifying-glass {
   font-size: 18px;
   margin: 0 2rem;
@@ -80,6 +97,15 @@ body {
   border: none;
   width: 100%;
   height: 100%;
+}
+
+.header__more__search__input-dark {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+.header__more__search__input-dark::placeholder {
+  color: var(--light-mode-input);
 }
 
 .header__more__filter {
@@ -99,6 +125,10 @@ body {
 
 .header__more__filter:hover {
   cursor: pointer;
+}
+
+.header__more__filter-dark {
+  background-color: var(--dark-blue);
 }
 
 .header__more__filter__list {
@@ -136,6 +166,10 @@ body {
   background-color: var(--very-light-gray);
 }
 
+.main-dark {
+  background-color: var(--very-dark-blue);
+}
+
 .country-cards {
   width: 100%;
   display: grid;
@@ -161,6 +195,11 @@ body {
 .country-cards__card:hover {
   cursor: pointer;
   transform: scale(103%);
+}
+
+.country-cards__card-dark {
+  background-color: var(--dark-blue);
+  color: var(--white);
 }
 
 .country-cards__card__img {
