@@ -88,6 +88,11 @@ fetch("data.json")
       textSpecification.classList.add("specification-section__text");
 
       const textSpecificationDate1 = document.createElement("div");
+      
+      const moreInfo = document.createElement("div");
+      
+      const moreTexts = document.createElement("div");
+      moreTexts.classList.add("specification-section__text__more");
 
       const NativeName = document.createElement("p");
       const Population = document.createElement("p");
@@ -142,11 +147,16 @@ fetch("data.json")
       borderCountriesTitle.textContent = "Border Countries:"
 
       mainContainer.appendChild(specificationSection);
-      specificationSection.append(containerBack, imageSpecification, textSpecification, borderCountries);
+      specificationSection.append(containerBack, textSpecification);
 
       containerBack.append(backIcon, paragraphBack);
 
-      textSpecification.append(titleSpecification, textSpecificationDate1, textSpecificationDate2);
+      moreTexts.append(textSpecificationDate1, textSpecificationDate2);
+
+      moreInfo.append(titleSpecification, moreTexts, borderCountries);
+      moreInfo.classList.add("specification-section__text__more-info");
+
+      textSpecification.append(imageSpecification, moreInfo);
 
       textSpecificationDate1.append(NativeName, Population, Region, Subregion, Capital);
 

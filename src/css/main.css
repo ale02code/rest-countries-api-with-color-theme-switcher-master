@@ -24,13 +24,16 @@ body {
 }
 
 .header__present {
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, .2);
+  margin-bottom: 12px;
+}
+
+.header__present-container {
   height: 68px;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
-  box-shadow: 0px 1px 8px rgba(0, 0, 0, .2);
-  margin-bottom: 12px;
 }
 
 .header__present__theme {
@@ -67,6 +70,7 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
   height: 50px;
   border-radius: var(--small-radius);
+  overflow: hidden;
   margin: 1rem 0;
 }
 
@@ -319,6 +323,7 @@ body {
 
 .specification-section-dark {
   background-color: var(--very-dark-blue);
+  background-color: var(--dark-blue);
   color: var(--white);
 }
 
@@ -329,6 +334,83 @@ body {
 .specification-section__border-countries__item-dark {
   background-color: var(--dark-blue);
   color: var(--white);
+}
+
+@media screen and (min-width: 500px) {
+
+  .header__present-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .header__more {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+    flex-direction: row;
+  }
+
+  .header__more__search {
+    max-width: 400px;
+  }
+
+  .header__more__filter {
+    max-width: 200px;
+  }
+
+  .specification-section {
+    justify-content: center;
+  }
+
+  .specification-section__img {
+    width: 50%;
+  }
+
+  .specification-section__text {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .specification-section__text__more-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1.2rem;
+    width: 50%;
+  }
+
+  .specification-section__text__more {
+    display: flex;
+    gap: 10%;
+  }
+
+  .specification-section__border-countries {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+  }
+
+  .specification-section__border-countries__title {
+    margin: 0;
+    width: 220px;
+    margin-right: 1rem;
+  }
+
+  .header-dark {
+    background-color: var(--dark-blue);
+  }
+
+  .main-dark {
+    background-color: var(--dark-blue);
+  }
+
+  .body-dark {
+    background-color: var(--dark-blue);
+  }
 }
 
 .hidden {
