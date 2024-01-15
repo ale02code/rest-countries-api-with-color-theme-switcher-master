@@ -110,12 +110,21 @@ fetch("data.json")
       const borderCountriesTitle = document.createElement("strong");
       borderCountriesTitle.classList.add("specification-section__border-countries__title");
 
-      const borderCountriesItem1 = document.createElement("button");
-      borderCountriesItem1.classList.add("specification-section__border-countries__item");
-      const borderCountriesItem2 = document.createElement("button");
-      borderCountriesItem2.classList.add("specification-section__border-countries__item");
-      const borderCountriesItem3 = document.createElement("button");
-      borderCountriesItem3.classList.add("specification-section__border-countries__item");
+      if (element.borders === undefined) {
+        const borderCountriesItem = document.createElement("div");
+        borderCountriesItem.classList.add("specification-section__border-countries__item");
+        borderCountriesItem.textContent = "No border countries";
+        borderCountriesContainer.appendChild(borderCountriesItem);
+        borderCountries.appendChild(borderCountriesContainer);
+      } else {
+        element.borders.forEach(border => {
+          const borderCountriesItem = document.createElement("div");
+          borderCountriesItem.classList.add("specification-section__border-countries__item");
+          borderCountriesItem.textContent = border;
+          borderCountriesContainer.appendChild(borderCountriesItem);
+        });
+        borderCountries.appendChild(borderCountriesContainer);
+      }
 
       imageSpecification.src = element.flags.svg;
       titleSpecification.textContent = element.name;
@@ -132,10 +141,6 @@ fetch("data.json")
 
       borderCountriesTitle.textContent = "Border Countries:"
 
-      borderCountriesItem1.textContent = "France";
-      borderCountriesItem2.textContent = "Germany";
-      borderCountriesItem3.textContent = "Netherlands";
-
       mainContainer.appendChild(specificationSection);
       specificationSection.append(containerBack, imageSpecification, textSpecification, borderCountries);
 
@@ -148,38 +153,31 @@ fetch("data.json")
       textSpecificationDate2.append(TopLevelDomain, Currencies, Languages);
 
       borderCountries.append(borderCountriesTitle, borderCountriesContainer);
-      borderCountriesContainer.append(borderCountriesItem1, borderCountriesItem2, borderCountriesItem3);
 
-      if (bodyDark.classList.contains("body-dark")) {
-        specificationSection.classList.toggle("specification-section-dark");
-        containerBack.classList.toggle("specification-section__back-dark");
+      const borderItem = document.querySelectorAll(".specification-section__border-countries__item");
 
-        borderCountriesItem1.classList.add("specification-section__border-countries__item-dark");
-        borderCountriesItem2.classList.add("specification-section__border-countries__item-dark");
-        borderCountriesItem3.classList.add("specification-section__border-countries__item-dark");
-      } else {
-        specificationSection.classList.remove("specification-section-dark");
-        containerBack.classList.remove("specification-section__back-dark");
-        borderCountriesItem1.classList.remove("specification-section__border-countries__item-dark");
-        borderCountriesItem2.classList.remove("specification-section__border-countries__item-dark");
-        borderCountriesItem3.classList.remove("specification-section__border-countries__item-dark");
-      }
-
-      buttonTheme.addEventListener("click", () => {
+      const darkModeSpecificationSection = () => {
         if (bodyDark.classList.contains("body-dark")) {
           specificationSection.classList.toggle("specification-section-dark");
           containerBack.classList.toggle("specification-section__back-dark");
 
-          borderCountriesItem1.classList.add("specification-section__border-countries__item-dark");
-          borderCountriesItem2.classList.add("specification-section__border-countries__item-dark");
-          borderCountriesItem3.classList.add("specification-section__border-countries__item-dark");
+          borderItem.forEach(item => {
+            item.classList.add("specification-section__border-countries__item-dark");
+          })
         } else {
           specificationSection.classList.remove("specification-section-dark");
           containerBack.classList.remove("specification-section__back-dark");
-          borderCountriesItem1.classList.remove("specification-section__border-countries__item-dark");
-          borderCountriesItem2.classList.remove("specification-section__border-countries__item-dark");
-          borderCountriesItem3.classList.remove("specification-section__border-countries__item-dark");
+
+          borderItem.forEach(item => {
+            item.classList.remove("specification-section__border-countries__item-dark");
+          })
         }
+      }
+
+      darkModeSpecificationSection();
+
+      buttonTheme.addEventListener("click", () => {
+        darkModeSpecificationSection();
       })
     }
 
