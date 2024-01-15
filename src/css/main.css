@@ -192,7 +192,7 @@ body {
   margin: 5px 0;
 }
 
-/* Specification SEction */
+/* Specification Section */
 
 .specification-section {
   width: 100%;
@@ -318,16 +318,16 @@ body {
 }
 
 .specification-section-dark {
-  background-color: var(--dark-blue);
+  background-color: var(--very-dark-blue);
   color: var(--white);
 }
 
 .specification-section__back-dark {
-  background-color: var(--very-dark-blue);
+  background-color: var(--dark-blue);
 }
 
 .specification-section__border-countries__item-dark {
-  background-color: var(--very-dark-blue);
+  background-color: var(--dark-blue);
   color: var(--white);
 }
 
