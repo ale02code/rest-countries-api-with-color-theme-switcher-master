@@ -279,7 +279,7 @@ body {
 
 /* Dark Mode Styles */
 .body-dark {
-  background-color: var(--dark-blue);
+  background-color: var(--very-dark-blue);
 }
 
 .header-dark {
@@ -288,16 +288,24 @@ body {
 }
 
 .header__present-dark {
-  background-color: var(--very-dark-blue);
+  background-color: var(--dark-blue);
 }
 
 .header__more__search-dark {
   background-color: var(--dark-blue);
 }
 
+.header__more__filter-dark {
+  background-color: var(--dark-blue);
+}
+
 .header__more__filter__list-active-dark {
   background-color: var(--dark-blue);
   color: var(--white);
+}
+
+.header__more__filter__list-active-dark {
+  background-color: var(--dark-blue);
 }
 
 .main-dark {
@@ -312,10 +320,6 @@ body {
 .specification-section-dark {
   background-color: var(--dark-blue);
   color: var(--white);
-}
-
-.header__more__filter__list-active-dark {
-  background-color: var(--dark-blue);
 }
 
 .specification-section__back-dark {
