@@ -256,7 +256,7 @@ body {
   max-height: max-content;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -401,10 +401,6 @@ body {
   }
 
   .header-dark {
-    background-color: var(--dark-blue);
-  }
-
-  .main-dark {
     background-color: var(--dark-blue);
   }
 
