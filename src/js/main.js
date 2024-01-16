@@ -50,6 +50,20 @@ fetch("data.json")
       updateDOM();
     });
 
+
+    const addDotsEveryThreeDigits = (num) => {
+      let numberToText = num.toString();
+
+      let groups = [];
+      for (let i = numberToText.length; i > 0; i -= 3) {
+        groups.unshift(numberToText.slice(Math.max(0, i - 3), i));
+      }
+
+      let result = groups.join('.');
+
+      return result;
+    }
+
     const createSpecificationSection = (element) => {
       window.scrollTo(0, 0);
 
@@ -88,9 +102,9 @@ fetch("data.json")
       textSpecification.classList.add("specification-section__text");
 
       const textSpecificationDate1 = document.createElement("div");
-      
+
       const moreInfo = document.createElement("div");
-      
+
       const moreTexts = document.createElement("div");
       moreTexts.classList.add("specification-section__text__more");
 
@@ -135,13 +149,16 @@ fetch("data.json")
       titleSpecification.textContent = element.name;
 
       NativeName.innerHTML = `<strong>Native Name:</strong> ${element.nativeName}`;
-      Population.innerHTML = `<strong>Population:</strong> ${element.population}`;
+
+      const populationSpecificSection = addDotsEveryThreeDigits(element.population);
+
+      Population.innerHTML = `<strong>Population:</strong> ${populationSpecificSection}`;
       Region.innerHTML = `<strong>Region:</strong> ${element.region}`;
       Subregion.innerHTML = `<strong>Sub Region:</strong> ${element.subregion}`;
       Capital.innerHTML = `<strong>Capital:</strong> ${element.capital}`;
 
       TopLevelDomain.innerHTML = `<strong>Top Level Domain:</strong> ${element.topLevelDomain}`;
-      Currencies.innerHTML = `<strong>Currencies:</strong> ${element.currencies[0].name}`;
+      Currencies.innerHTML = `<strong>Currencies:</strong> ${element.currencies.map(cur => cur.name).join(", ")}`;
       Languages.innerHTML = `<strong>Languages:</strong> ${element.languages.map(lang => lang.name).join(", ")}`;
 
       borderCountriesTitle.textContent = "Border Countries:"
@@ -219,7 +236,8 @@ fetch("data.json")
 
         const textPopulation = document.createElement("p");
         textPopulation.classList.add("country-cards__card__text");
-        textPopulation.innerHTML = `<strong>Population:</strong> ${element.population}`;
+        const populationMainCard = addDotsEveryThreeDigits(element.population);
+        textPopulation.innerHTML = `<strong>Population:</strong> ${populationMainCard}`;
 
         const textRegion = document.createElement("p");
         textRegion.classList.add("country-cards__card__text");
